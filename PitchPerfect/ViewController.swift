@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func recordAudio(sender: AnyObject) {
+        print("Audio Record button has been pressed.")
+        
+    }
 
 }
 

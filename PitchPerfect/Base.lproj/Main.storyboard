@@ -16,7 +16,21 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGY-7Y-H2R" userLabel="Record">
+                                <rect key="frame" x="275.5" y="285" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.42142372893976854" green="0.82252204964611986" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HX7-Qz-Ufl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Gr-uE-wlv"/>
+                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jie-Gb-13v"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
