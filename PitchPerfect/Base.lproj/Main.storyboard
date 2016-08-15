@@ -17,24 +17,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGY-7Y-H2R" userLabel="Record">
-                                <rect key="frame" x="275.5" y="285" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGY-7Y-H2R" userLabel="Record">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.42142372893976854" green="0.82252204964611986" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Record"/>
+                                <state key="normal" image="recordButton"/>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HX7-Qz-Ufl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW1-tP-kuE">
+                                <rect key="frame" x="275" y="486" width="50" height="50"/>
+                                <state key="normal" image="stopButton"/>
+                                <connections>
+                                    <action selector="stopRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nON-nO-qo7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ana-PA-vOT">
+                                <rect key="frame" x="247" y="432" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Gr-uE-wlv"/>
-                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jie-Gb-13v"/>
+                            <constraint firstItem="FW1-tP-kuE" firstAttribute="centerX" secondItem="Ana-PA-vOT" secondAttribute="centerX" id="5tn-Gp-neO"/>
+                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8lR-al-4Wc"/>
+                            <constraint firstItem="Ana-PA-vOT" firstAttribute="top" secondItem="GGY-7Y-H2R" secondAttribute="bottom" constant="82" id="GUi-pN-VNn"/>
+                            <constraint firstItem="Ana-PA-vOT" firstAttribute="centerX" secondItem="GGY-7Y-H2R" secondAttribute="centerX" id="Z82-n8-I4n"/>
+                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mzh-Co-N1u"/>
+                            <constraint firstItem="FW1-tP-kuE" firstAttribute="top" secondItem="Ana-PA-vOT" secondAttribute="bottom" constant="33" id="vm4-TK-jgS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="GGY-7Y-H2R" id="BzI-5e-Z6H"/>
+                        <outlet property="recordLabel" destination="Ana-PA-vOT" id="DGP-St-Vv7"/>
+                        <outlet property="stopButton" destination="FW1-tP-kuE" id="t3b-60-iAb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="recordButton" width="100" height="100"/>
+        <image name="stopButton" width="50" height="50"/>
+    </resources>
 </document>
