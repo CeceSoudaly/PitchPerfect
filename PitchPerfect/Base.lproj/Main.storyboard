@@ -55,7 +55,7 @@
                         <outlet property="recordButton" destination="GGY-7Y-H2R" id="BzI-5e-Z6H"/>
                         <outlet property="recordLabel" destination="Ana-PA-vOT" id="DGP-St-Vv7"/>
                         <outlet property="stopButton" destination="FW1-tP-kuE" id="t3b-60-iAb"/>
-                        <segue destination="FVw-Xo-HGp" kind="show" identifier="stopRecording" id="r4G-MC-zJC"/>
+                        <segue destination="FVw-Xo-HGp" kind="show" identifier="StopRecording" id="eFP-2x-xD9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -83,10 +83,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jo2-wS-UpU" userLabel="SnailButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="134"/>
                                                 <state key="normal" image="snailButton"/>
+                                                <connections>
+                                                    <action selector="playSoundsforButtons:" destination="FVw-Xo-HGp" eventType="touchUpInside" id="sTo-n5-q7c"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-W9-SwI" userLabel="RabbitButton">
                                                 <rect key="frame" x="280" y="0.0" width="280" height="134"/>
                                                 <state key="normal" image="rabbitButton"/>
+                                                <connections>
+                                                    <action selector="playSoundsforButtons:" destination="FVw-Xo-HGp" eventType="touchUpInside" id="YVO-8p-fAY"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -96,10 +102,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b6-rQ-tDU" userLabel="ChipmunkButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="134"/>
                                                 <state key="normal" image="chipmunkButton"/>
+                                                <connections>
+                                                    <action selector="playSoundsforButtons:" destination="FVw-Xo-HGp" eventType="touchUpInside" id="3kW-Dl-d7A"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kb-gE-RDT" userLabel="DarthVaderButton">
                                                 <rect key="frame" x="280" y="0.0" width="280" height="134"/>
                                                 <state key="normal" image="DarthVaderButton"/>
+                                                <connections>
+                                                    <action selector="playSoundsforButtons:" destination="FVw-Xo-HGp" eventType="touchUpInside" id="PJm-UN-AJa"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -109,10 +121,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXG-D3-lbQ" userLabel="ParrotButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="134"/>
                                                 <state key="normal" image="echoButton"/>
+                                                <connections>
+                                                    <action selector="playSoundsforButtons:" destination="FVw-Xo-HGp" eventType="touchUpInside" id="hlb-ny-AoO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5A-0Y-tUS" userLabel="ReverbButton">
                                                 <rect key="frame" x="280" y="0.0" width="280" height="134"/>
                                                 <state key="normal" image="reverbButton"/>
+                                                <connections>
+                                                    <action selector="playSoundsforButtons:" destination="FVw-Xo-HGp" eventType="touchUpInside" id="E1y-0Y-ahx"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -122,6 +140,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlr-JP-o5l" userLabel="StopButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="134"/>
                                                 <state key="normal" image="stopButton"/>
+                                                <connections>
+                                                    <action selector="stopButtonPressed:" destination="FVw-Xo-HGp" eventType="touchUpInside" id="bbI-QH-Z4U"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -137,13 +158,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ChipmunkButton" destination="7b6-rQ-tDU" id="0cX-Mz-KyJ"/>
-                        <outlet property="DarthVaderButton" destination="6kb-gE-RDT" id="7gh-oQ-MMv"/>
-                        <outlet property="ParrotButton" destination="IXG-D3-lbQ" id="H4u-7B-mlK"/>
-                        <outlet property="RabbitButton" destination="c3O-W9-SwI" id="kRm-Mb-VVl"/>
-                        <outlet property="ReverbButton" destination="o5A-0Y-tUS" id="UfC-np-b2G"/>
-                        <outlet property="SnailButton" destination="jo2-wS-UpU" id="DrP-8a-8bh"/>
-                        <outlet property="StopButton" destination="wlr-JP-o5l" id="O9Z-nR-pOP"/>
+                        <outlet property="ChipmunkButton" destination="7b6-rQ-tDU" id="9R3-3z-8bV"/>
+                        <outlet property="DarthVaderButton" destination="6kb-gE-RDT" id="6t4-Sg-4j3"/>
+                        <outlet property="ParrotButton" destination="IXG-D3-lbQ" id="M5N-JC-mOZ"/>
+                        <outlet property="RabbitButton" destination="c3O-W9-SwI" id="39V-8c-HFP"/>
+                        <outlet property="ReverbButton" destination="o5A-0Y-tUS" id="BBQ-Xr-RTc"/>
+                        <outlet property="SnailButton" destination="jo2-wS-UpU" id="Yas-Y1-DDj"/>
+                        <outlet property="StopButton" destination="wlr-JP-o5l" id="BFD-Zx-GAP"/>
                         <outlet property="StopRecordButton" destination="wlr-JP-o5l" id="ZMf-Db-HvL"/>
                     </connections>
                 </viewController>
