@@ -165,7 +165,6 @@
                         <outlet property="ReverbButton" destination="o5A-0Y-tUS" id="BBQ-Xr-RTc"/>
                         <outlet property="SnailButton" destination="jo2-wS-UpU" id="Yas-Y1-DDj"/>
                         <outlet property="StopButton" destination="wlr-JP-o5l" id="BFD-Zx-GAP"/>
-                        <outlet property="StopRecordButton" destination="wlr-JP-o5l" id="ZMf-Db-HvL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8f-nm-Jdi" userLabel="First Responder" sceneMemberID="firstResponder"/>

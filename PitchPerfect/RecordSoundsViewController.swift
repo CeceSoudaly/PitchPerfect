@@ -16,6 +16,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordButton: UIButton!
     
     @IBOutlet weak var stopButton: UIButton!
+    
     var recordedAudioURL:AVAudioRecorder!
     
     override func viewDidLoad() {
@@ -36,7 +37,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.enabled=false
         stopButton.enabled=true
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
-        let recordingName = "recordedVoice.wav"
+        let currentDateTime=NSDate();
+        let formatter =  NSDateFormatter();
+        formatter.dateFormat =  "ddMMyyyy-HHmmss";
+        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
+        //let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
         print(filePath)
@@ -45,6 +50,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         
         try! recordedAudioURL = AVAudioRecorder(URL: filePath!, settings: [:])
+        recordedAudioURL.delegate=self
         recordedAudioURL.meteringEnabled = true
         recordedAudioURL.prepareToRecord()
         recordedAudioURL.record()
@@ -62,7 +68,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordedAudioURL.stop()
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(false)
-
+   
         print("Done....")
   
     }
@@ -71,9 +77,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
          stopButton.enabled=false
     }
     
+    
+    
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         //this function is part of the protocal(contract) between the current class and AVAudioRecorderDelegate
-        print("Finish recording...")
+        print("!!!Finish recording...")
         
         if(flag)
         {
