@@ -31,8 +31,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func recordAudio(sender: AnyObject) {
-        print("Audio Record button has been pressed.")
-        
         recordLabel.text = "Recording in progress..."
         recordButton.enabled=false
         stopButton.enabled=true
@@ -59,7 +57,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func stopRecord(sender: AnyObject) {
-        print("Stop Record button has been pressed.")
         recordLabel.text = "Stop Audio..."
         stopButton.enabled=false
         recordButton.enabled=true
@@ -68,9 +65,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordedAudioURL.stop()
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(false)
-   
-        print("Done....")
-  
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -81,8 +75,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         //this function is part of the protocal(contract) between the current class and AVAudioRecorderDelegate
-        print("!!!Finish recording...")
-        
         if(flag)
         {
             self.performSegueWithIdentifier("StopRecording", sender: recordedAudioURL.url)
@@ -93,7 +85,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //testing 
             if (segue.identifier == "StopRecording") {
                 let playSoundsVC = segue.destinationViewController as! PlaySoundsViewController
                 let recordedAudioURL = sender as! NSURL
