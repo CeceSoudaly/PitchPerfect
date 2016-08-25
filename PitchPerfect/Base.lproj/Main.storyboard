@@ -26,28 +26,28 @@
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HX7-Qz-Ufl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ana-PA-vOT">
+                                <rect key="frame" x="246" y="388" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW1-tP-kuE">
-                                <rect key="frame" x="275" y="486" width="50" height="50"/>
+                                <rect key="frame" x="275" y="448" width="50" height="50"/>
                                 <state key="normal" image="stopButton"/>
                                 <connections>
                                     <action selector="stopRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nON-nO-qo7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ana-PA-vOT">
-                                <rect key="frame" x="247" y="432" width="107" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FW1-tP-kuE" firstAttribute="centerX" secondItem="Ana-PA-vOT" secondAttribute="centerX" id="5tn-Gp-neO"/>
-                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8lR-al-4Wc"/>
-                            <constraint firstItem="Ana-PA-vOT" firstAttribute="top" secondItem="GGY-7Y-H2R" secondAttribute="bottom" constant="82" id="GUi-pN-VNn"/>
-                            <constraint firstItem="Ana-PA-vOT" firstAttribute="centerX" secondItem="GGY-7Y-H2R" secondAttribute="centerX" id="Z82-n8-I4n"/>
-                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mzh-Co-N1u"/>
-                            <constraint firstItem="FW1-tP-kuE" firstAttribute="top" secondItem="Ana-PA-vOT" secondAttribute="bottom" constant="33" id="vm4-TK-jgS"/>
+                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mrz-FM-WoX"/>
+                            <constraint firstItem="Ana-PA-vOT" firstAttribute="centerX" secondItem="GGY-7Y-H2R" secondAttribute="centerX" id="PRL-l4-tr5"/>
+                            <constraint firstItem="FW1-tP-kuE" firstAttribute="centerX" secondItem="Ana-PA-vOT" secondAttribute="centerX" id="QGo-b0-b6Q"/>
+                            <constraint firstItem="GGY-7Y-H2R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qdI-XA-2UB"/>
+                            <constraint firstItem="FW1-tP-kuE" firstAttribute="top" secondItem="Ana-PA-vOT" secondAttribute="bottom" constant="39" id="veg-nu-A73"/>
+                            <constraint firstItem="Ana-PA-vOT" firstAttribute="top" secondItem="GGY-7Y-H2R" secondAttribute="bottom" constant="38" id="zCK-0s-hGz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HHj-Cu-2PN"/>
