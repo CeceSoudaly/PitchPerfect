@@ -30,9 +30,9 @@ class PlaySoundsViewController: UIViewController {
     
     enum ButtonType: Int{case Slow=0, Fast, Chipmunk, Vader, Echo, Reverb}
     
-    
     @IBAction func playSoundsforButtons(sender: UIButton)
     {
+        
         switch(ButtonType(rawValue: sender.tag)!){
         case .Slow:
             playSound(rate: 0.5)
@@ -55,6 +55,7 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopButtonPressed(sender: AnyObject)
     {
         stopAudio()
+        
     }
     
     override func viewDidLoad() {
@@ -66,6 +67,13 @@ class PlaySoundsViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
+        SnailButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        RabbitButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        ChipmunkButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        DarthVaderButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        ParrotButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        ReverbButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        
         configureUI(.NotPlaying)
     }
     
@@ -84,5 +92,8 @@ class PlaySoundsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+   
+    
 
 }
