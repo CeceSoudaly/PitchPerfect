@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundsViewController.swift
 //  PitchPerfect
 //
 //  Created by Cece Soudaly on 8/13/16.
@@ -18,22 +18,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var stopButton: UIButton!
     
     var recordedAudioURL:AVAudioRecorder!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-    }
+    var variableString = "say"
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     @IBAction func recordAudio(sender: AnyObject) {
-        recordLabel.text = "Recording in progress..."
-        recordButton.enabled=false
-        stopButton.enabled=true
+
+        configureUI(true)
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
         let currentDateTime=NSDate();
         let formatter =  NSDateFormatter();
@@ -57,11 +47,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func stopRecord(sender: AnyObject) {
-        recordLabel.text = "Stop Audio..."
-        stopButton.enabled=false
-        recordButton.enabled=true
-        recordLabel.text = "Tap to Record"
-        
+        configureUI(false)
         recordedAudioURL.stop()
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(false)
@@ -92,7 +78,21 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             }
     }
     
-    
+    func configureUI(recording: Bool)
+    {
+        if(recording)
+        {
+            recordLabel.text = "Recording in progress..."
+            recordButton.enabled=false
+            stopButton.enabled=true
+        }else
+        {
+            stopButton.enabled=false
+            recordButton.enabled=true
+            recordLabel.text = "Tap to Record"
+
+        }
+    }
     
 }
 
