@@ -67,6 +67,9 @@ class PlaySoundsViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
         SnailButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         RabbitButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         ChipmunkButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
@@ -76,24 +79,5 @@ class PlaySoundsViewController: UIViewController {
         
         configureUI(.NotPlaying)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
    
-    
-
 }

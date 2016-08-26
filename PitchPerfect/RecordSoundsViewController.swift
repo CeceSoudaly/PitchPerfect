@@ -54,6 +54,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+         super.viewWillAppear(animated)
          stopButton.enabled=false
     }
     
@@ -63,7 +64,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         //this function is part of the protocal(contract) between the current class and AVAudioRecorderDelegate
         if(flag)
         {
-            self.performSegueWithIdentifier("StopRecording", sender: recordedAudioURL.url)
+           performSegueWithIdentifier("StopRecording", sender: recordedAudioURL.url)
         }else
         {
             print("stop recording fail")
